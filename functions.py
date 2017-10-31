@@ -3,14 +3,14 @@ from Edge import Edge
 def spanningTreeCheck(c, nVertices):
     # check if Spanning Tree
     #   Has all vertices connected
-    vert = set()
+    '''vert = set()
     for e in c:
         vert.add(e.vertex1)
         vert.add(e.vertex2)
 
     #does not cover all vertices thus not spanning
     if not len(vert) == nVertices:
-        return False
+    return False'''
 
     #   Is connected (all reachable from first)
     vert = set()
@@ -30,8 +30,6 @@ def spanningTreeCheck(c, nVertices):
                 return False
             else:
                 i += 1
-
-    if not len(vert) == nVertices:
-        return False
-
-    return True
+        if len(vert) == nVertices:
+            return True
+    return False

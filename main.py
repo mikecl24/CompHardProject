@@ -4,7 +4,7 @@ from Edge import Edge
 from functions import spanningTreeCheck
 from itertools import combinations
 
-f = open("test04.uwg", "r")
+f = open("test03.uwg", "r")
 NVertices = int(f.readline())
 NEdges = int(f.readline())
 
@@ -29,44 +29,43 @@ Edges.append(Edge(1, 3, 3))
 B=0
 for e in Edges:
     B += e.weight
-print("Maximum B: " + str(B) )
+#print("Maximum B: " + str(B) )
 
 #generate combinations
 comb = combinations(Edges, NVertices-1)
 
 min = B
 for c in comb:
-    #print(*c, sep = ' ')
+
+    # calculate sum Edges
+    sum = 0
+    for e in c:
+        sum += e.weight
+        # print(sum)
+    if sum>B:
+        continue
+
+    # check sum in Edges'
+    sump = 0
+    for e in c:
+        sump += Edges[NEdges - 1 - Edges.index(e)].weight
+        # print(sump)
+    if sump>B:
+        continue
 
     #Check if its a spanning tree
     if not spanningTreeCheck(c, NVertices):
         #print("Not a spanning Tree")
         continue
 
-    # calculate sum Edges
-    sum = 0
-    for e in c:
-        sum += e.weight
-    #print(sum)
+    copy = c
+    if sum < sump:
+        B = sump
+    else:
+        B = sum
 
-    # check sum in Edges'
-    sump = 0
-    for e in c:
-        sump += Edges[NEdges-1-Edges.index(e)].weight
-    #print(sump)
-
-    if sum<B and sump<B:
-        if sum<sump:
-            B = sump
-        else:
-            B = sum
-
+print(*copy, sep=' ')
 print("Smallest B: " + str(B))
-
-
-
-
-
 
 
 '''
