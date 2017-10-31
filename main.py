@@ -4,7 +4,7 @@ from Edge import Edge
 from functions import spanningTreeCheck
 from itertools import combinations
 
-f = open("test03.uwg", "r")
+f = open("test02.uwg", "r")
 NVertices = int(f.readline())
 NEdges = int(f.readline())
 
