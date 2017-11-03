@@ -1,6 +1,8 @@
-from Greedy.Edge import Edge
-from Greedy.functionsG import check_Set, Union
 from random import randint
+
+from Edge import Edge
+from Greedy.functionsG import check_Set, Union
+
 
 def ND_MFMST():
     debug = False

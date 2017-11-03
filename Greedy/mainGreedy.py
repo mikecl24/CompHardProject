@@ -1,8 +1,8 @@
-from Greedy.Edge import Edge
+from Edge import Edge
 from Greedy.functionsG import check_Set, Union
 
 debug = False
-f = open("test01.uwg", "r")
+f = open("test02.uwg", "r")
 NVertices = int(f.readline())
 NEdges = int(f.readline())
 
@@ -76,8 +76,10 @@ while len(A)<NVertices-1:
 
 if B>B_prime:
     print(B)
+    print(B_prime)
 else:
     print(B_prime)
+    print(B)
 
 A = sorted(A, key=lambda x: (x.vertex1, x.vertex2))
 print(*A, sep=' ')

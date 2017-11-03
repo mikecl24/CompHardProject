@@ -1,5 +1,4 @@
 from itertools import combinations
-
 from Edge import Edge
 
 from Combinations.functions import spanningTreeCheck
@@ -17,19 +16,18 @@ B=0
 for e in Edges:
     B += e.weight
 #print("Maximum B: " + str(B) )
-#input()
+
 #generate combinations
 comb = combinations(Edges, NVertices-1)
 
-print(B/NEdges*(NVertices-1))
-#B = 297226
 for c in comb:
+    #print(*c, sep=' ')
     # calculate sum Edges
     sum = 0
     for e in c:
         sum += e.weight
         # print(sum)
-    if sum>B:
+    if sum > B:
         continue
 
     # check sum in Edges'
@@ -37,7 +35,7 @@ for c in comb:
     for e in c:
         sump += Edges[NEdges - 1 - Edges.index(e)].weight
         # print(sump)
-    if sump>B:
+    if sump > B:
         continue
 
     #Check if its a spanning tree
@@ -48,40 +46,12 @@ for c in comb:
     copy = c
     if sum < sump:
         B = sump
-        break
+        continue
     else:
         B = sum
-        break
+        continue
     print("abort mission")
 
 print(*copy, sep=' ')
 print("Smallest B: " + str(B))
 
-
-'''
-#random implementation
-
-#pick NVertices-1
-NumPicked = []
-while len(NumPicked) != (NVertices-1):
-    e = randint(0, NEdges-1)
-    if e not in NumPicked:
-        NumPicked.append(e)
-NumPicked = sorted(NumPicked)
-print(NumPicked)
-
-#check if B in Edges
-sum = 0
-for i in NumPicked:
-    sum += Edges[i].weight
-    if sum<B:
-        
-#check if B in Edges'
-
-
-#check if Spanning Tree
-#   Has all vertices connected
-for i in NumPicked:
-    print(Edges[i])
-#   Is connected (all reachable from 1)
-'''
