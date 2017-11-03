@@ -1,4 +1,3 @@
-from Edge import Edge
 # c is a list of edges
 def spanningTreeCheck(c, nVertices):
     # check if Spanning Tree

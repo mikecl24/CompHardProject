@@ -1,8 +1,8 @@
-from random import randint
-from Node import Node
-from Edge import Edge
-from functions import spanningTreeCheck
 from itertools import combinations
+
+from Edge import Edge
+
+from Combinations.functions import spanningTreeCheck
 
 f = open("test02.uwg", "r")
 NVertices = int(f.readline())
