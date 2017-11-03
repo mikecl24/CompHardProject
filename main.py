@@ -12,31 +12,18 @@ Edges = []
 for i in range(NEdges):
     edge = f.readline().split(" ")
     Edges.append(Edge(int(edge[0]), int(edge[1]), int(edge[2])))
-'''
-NVertices = 3
-NEdges = 3
-Edges = []
 
-Edges.append(Edge(1, 2, 1))
-Edges.append(Edge(2, 3, 2))
-Edges.append(Edge(1, 3, 3))
-'''
-
-#Verify integrity of list of Edges
-#print(*Edges, sep=' ')
-
-#Highest B
 B=0
 for e in Edges:
     B += e.weight
 #print("Maximum B: " + str(B) )
-
+#input()
 #generate combinations
 comb = combinations(Edges, NVertices-1)
 
-min = B
+print(B/NEdges*(NVertices-1))
+#B = 297226
 for c in comb:
-
     # calculate sum Edges
     sum = 0
     for e in c:
@@ -61,8 +48,11 @@ for c in comb:
     copy = c
     if sum < sump:
         B = sump
+        break
     else:
         B = sum
+        break
+    print("abort mission")
 
 print(*copy, sep=' ')
 print("Smallest B: " + str(B))
