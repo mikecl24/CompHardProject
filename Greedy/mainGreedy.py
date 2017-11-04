@@ -2,7 +2,7 @@ from Edge import Edge
 from Greedy.functionsG import check_Set, Union
 
 debug = False
-f = open("test02.uwg", "r")
+f = open("test03.uwg", "r")
 NVertices = int(f.readline())
 NEdges = int(f.readline())
 

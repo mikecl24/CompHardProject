@@ -12,6 +12,10 @@ for i in range(NEdges):
     edge = f.readline().split(" ")
     Edges.append(Edge(int(edge[0]), int(edge[1]), int(edge[2])))
 
+#Add the prime weights
+for e in Edges:
+    e.weight_p = Edges[NEdges - 1 - Edges.index(e)].weight
+
 B=0
 for e in Edges:
     B += e.weight
@@ -50,7 +54,6 @@ for c in comb:
     else:
         B = sum
         continue
-    print("abort mission")
 
 print(*copy, sep=' ')
 print("Smallest B: " + str(B))
