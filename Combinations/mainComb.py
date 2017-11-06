@@ -1,6 +1,8 @@
 from itertools import combinations
-from Edge import Edge
+
 from functionsC import spanningTreeCheck
+
+from NonGreedy.Edge import Edge
 
 nr = input("Which test? (1-4): ")
 try:

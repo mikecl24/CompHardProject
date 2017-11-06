@@ -1,7 +1,7 @@
 from random import randint
 
-from Edge import Edge
 from Greedy.functionsG import check_Set, Union
+from NonGreedy.Edge import Edge
 
 
 def ND_MFMST():

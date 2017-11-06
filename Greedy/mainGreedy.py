@@ -1,5 +1,5 @@
-from Edge import Edge
 from functionsG import check_Set, Union
+from Edge import Edge
 
 nr = input("Which test? (1-4): ")
 try:
