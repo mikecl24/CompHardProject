@@ -113,10 +113,11 @@ else:
     Res_h = B_prime_h
 #return minimum solution
 if Res < Res_h:
-    print(Res)
+    print("Smallest B: " + str(Res))
     A = sorted(A, key=lambda x: (x.vertex1, x.vertex2))
     print(*A, sep=' ')
 else:
-    print(Res_h)
+
+    print("Smallest B: " + str(Res_h))
     A_h = sorted(A_h, key=lambda x: (x.vertex1, x.vertex2))
     print(*A_h, sep=' ')

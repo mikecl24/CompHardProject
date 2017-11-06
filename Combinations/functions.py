@@ -1,16 +1,8 @@
 # c is a list of edges
 def spanningTreeCheck(c, nVertices):
     # check if Spanning Tree
+
     #   Has all vertices connected
-    '''vert = set()
-    for e in c:
-        vert.add(e.vertex1)
-        vert.add(e.vertex2)
-
-    #does not cover all vertices thus not spanning
-    if not len(vert) == nVertices:
-    return False'''
-
     #   Is connected (all reachable from first)
     vert = set()
     vert.add(c[0].vertex1)
