@@ -17,11 +17,11 @@ for e in Edges:
     e.weight_p = Edges[NEdges - 1 - Edges.index(e)].weight
 
 
-'''
+
 T = {1}
 init = []
 B, A = Grow(T, Edges, 0, 0)
 print(B)
 print(*A, sep=' ')
-'''
-Grow2(Edges, NVertices)
+
+#Grow2(Edges, NVertices)

@@ -50,9 +50,11 @@ for c in comb:
     copy = c
     if sum < sump:
         B = sump
+        print(B)
         continue
     else:
         B = sum
+        print(B)
         continue
 
 print(*copy, sep=' ')

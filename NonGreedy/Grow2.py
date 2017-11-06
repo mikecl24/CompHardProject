@@ -24,7 +24,7 @@ def Grow2(edges, nv):
                 #del graph[graph[v][0].vertex1][graph[graph[v][0].vertex1].index(graph[v][0])]
                 #del graph[graph[v][0].vertex2][graph[graph[v][0].vertex2].index(graph[v][0])]
                 flag = True
-    print(T)
+    #print(T)
     for i in range(1, len(graph)+1):
         print(str(i) + ': ')
         print(*graph[i], sep=' ')
