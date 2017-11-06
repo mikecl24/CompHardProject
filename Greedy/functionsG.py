@@ -1,4 +1,4 @@
-def check_Set(v1, v2, sets, debug):
+def check_Set(v1, v2, sets):
     #Find vertex 1
     i = 0
     t1 = 0
@@ -17,9 +17,6 @@ def check_Set(v1, v2, sets, debug):
             break
         i += 1
 
-    if debug:
-        print(sets[t1])
-        print(sets[t2])
 
     if t1 == t2:
         return False, 0, 0
